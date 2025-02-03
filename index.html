@@ -19,23 +19,23 @@
   <!-- navgaition menu -->
   <nav>
     <div class="navbar">
-      <div class="logo"><a href="#">Portfolio.</a></div>
+      <div class="logo"><a href="#">Shivansh.</a></div>
       <ul class="menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#services">Projects</a></li>
+        <li><a href="#project">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
         <div class="cancel-btn">
           <i class="fas fa-times"></i>
         </div>
       </ul>
       <div class="media-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
+        <a href="https://github.com/nigamman" target="_blank" class="fab fa-github"></a>
+        <a href="https://www.linkedin.com/in/shivansh-nigam-0a3658286/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/nigamman/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
+    
     <div class="menu-btn">
       <i class="fas fa-bars"></i>
     </div>
@@ -46,23 +46,22 @@
     <div class="home-content">
       <div class="text">
         <div class="text-one">Hello,</div>
-        <div class="text-two">I'm Shivansh Nigam</div>
-        <div class="text-three">Android Developer</div>
+        <div class="text-two"><span id="typed-name"></span></div>
+        <div class="text-three"><span id="typed-post"></span></div>
         <div class="text-four">From India</div>
       </div>
       <div class="button">
         <button>Hire Me</button>
       </div>
-    </div>
-  </section>
-
+    </div>        
+  </section>  
   <!-- About Section Start -->
   <section class="about" id="about">
     <div class="content">
       <div class="title"><span>About Me</span></div>
       <div class="about-details">
         <div class="left">
-          <img src="./images/rishi.jpg" alt="" />
+          <img src="images/rishi.jpg" alt="" />
         </div>
         <div class="right">
           <div class="topic">Enjoy solving Complex Problems</div>
@@ -78,7 +77,9 @@
             ideas, and build something amazing together!
           </p>
           <div class="button">
-            <button>Download Resume</button>
+            <a href="document/myResume_nigamman.pdf" download>
+              <button>Download Resume</button>
+            </a>  <!-- ✅ Fixed: Properly closed the <a> tag -->
           </div>
         </div>
       </div>
@@ -87,101 +88,158 @@
 
   <!-- My Skill Section Start -->
   <!-- Section Tag and Other Div will same where we need to put same CSS -->
-  <section class="skills" id="skills">
+  <section id="skills" class="skills">
     <div class="content">
       <div class="title"><span>My Skills</span></div>
-      <div class="skills-details">
-        <div class="text">
-          <div class="topic">Skills Reflects Our Knowledge</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus natus tenetur tempora? Quasi, rem quas
-            omnis. Porro rem aspernatur reiciendis ut praesentium minima ad, quos, officia! Illo libero, et, distinctio
-            repellat sed nesciunt est modi quaerat placeat. Quod molestiae, alias?</p>
-          <div class="experience">
-            <div class="num">10</div>
-            <div class="exp">
-              Years Of <br />
-              Experience
-            </div>
-          </div>
-        </div>
-        <div class="boxes">
-          <div class="box">
-            <div class="topic">C/C++</div>
-            <div class="per">90%</div>
-          </div>
-          <div class="box">
-            <div class="topic">Flutter</div>
-            <div class="per">80%</div>
-          </div>
-          <div class="box">
-            <div class="topic">Dart</div>
-            <div class="per">70%</div>
-          </div>
-          <div class="box">
-            <div class="topic">JavaScript</div>
-            <div class="per">60%</div>
-          </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <img src="icons/flutter-icon.png" alt="Flutter">
+        <h3>Flutter</h3>
+        <div class="progress-bar">
+          <div class="progress" data-progress="80%"></div>
         </div>
       </div>
+      <div class="skill-card">
+        <img src="icons/javascript-icon.png" alt="JavaScript">
+        <h3>JavaScript</h3>
+        <div class="progress-bar">
+          <div class="progress" data-progress="80%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="icons/cpp-icon.png" alt="CPP">
+        <h3>C/C++</h3>
+        <div class="progress-bar">
+          <div class="progress" data-progress="80%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="icons/dart-icon.png" alt="Dart">
+        <h3>Dart</h3>
+        <div class="progress-bar">
+          <div class="progress" data-progress="80%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="icons/andriodStudio-icon.png" alt="AndroidStudio">
+        <h3>Android Studio</h3>
+        <div class="progress-bar">
+          <div class="progress" data-progress="80%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="icons/github-icon.png" alt="github">
+        <h3>GitHub</h3>
+        <div class="progress-bar">
+          <div class="progress" data-progress="80%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="icons/android-icon.png" alt="AndroidDesign">
+        <h3>Andriod UI Toolkit</h3>
+        <div class="progress-bar">
+          <div class="progress" data-progress="80%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="icons/firebase-icon.png" alt="Firebase">
+        <h3>Firebase</h3>
+        <div class="progress-bar">
+          <div class="progress" data-progress="60%"></div>
+        </div>
+      </div>
+      <!-- Add more skill cards as needed -->
     </div>
   </section>
+  
 
-  <!-- My Services Section Start -->
-  <section class="services" id="services">
-    <div class="content">
-      <div class="title"><span>My Projects</span></div>
-      <div class="boxes">
-        <div class="box">
-          <div class="icon">
-            <i class="fas fa-desktop"></i>
-          </div>
-          <div class="topic">Leo Quotes</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem
-            eligendi?</p>
+  <!-- My Project Section Start -->
+<section class="project" id="project">
+  <div class="content">
+    <div class="title"><span>My Projects</span></div>
+    <div class="boxes">
+      <div class="box" data-tilt>
+        <div class="icon">
+          <img src="icons/chefmate-icon.png" alt="Chef Mate Icon">
         </div>
-        <div class="box">
-          <div class="icon">
-            <i class="fas fa-paint-brush"></i>
-          </div>
-          <div class="topic">Chef Mate</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem
-            eligendi?</p>
+        <div class="topic">Chef Mate</div>
+        <p class="description">A smart AI recipe app that suggests meals based on available ingredients.</p>
+        <div class="tech-icons">
+          <div class="tech" data-tech="TensorFlow"><img src="icons/tensorflow-icon.png"></div>
+          <div class="tech" data-tech="NodeJS"><img src="icons/nodejs-icon.png"></div>
+          <div class="tech" data-tech="Flutter"><img src="icons/flutter-icon.png"></div>
         </div>
-        <div class="box">
-          <div class="icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="topic">EarthQuake Reader</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem
-            eligendi?</p>
-        </div>
-        <div class="box">
-          <div class="icon">
-            <i class="fab fa-android"></i>
-          </div>
-          <div class="topic">Word Huddle Game</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem
-            eligendi?</p>
-        </div>
-        <div class="box">
-          <div class="icon">
-            <i class="fas fa-camera-retro"></i>
-          </div>
-          <div class="topic">Virtual Card Holder</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem
-            eligendi?</p>
-        </div>
-        <div class="box">
-          <div class="icon">
-            <i class="fas fa-tablet-alt"></i>
-          </div>
-          <div class="topic">Coming Soon...</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem
-            eligendi?</p>
-        </div>
+        <a href="#" target="_blank" class="github-btn">Coming Soon</a>
       </div>
+
+      <div class="box" data-tilt>
+        <div class="icon">
+          <img src="icons/leoapp-icon.png" alt="Leo Quotes Icon">
+        </div>
+        <div class="topic">Leo Quotes</div>
+        <p class="description">A Personalized Quotes App that provides daily quotes.</p>
+        <div class="tech-icons">
+          <div class="tech" data-tech="Flutter"><img src="icons/flutter-icon.png"></div>
+          <div class="tech" data-tech="OneSignal"><img src="icons/onesignal-icon.png"></div>
+          <div class="tech" data-tech="Firebase"><img src="icons/firebase-icon.png"></div>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.nigamman.leoquotes" target="_blank" class="github-btn">Play Store Link</a>
+      </div>
+      <div class="box">
+        <div class="icon">
+          <img src="icons/earthquakereader.png" alt="Leo Quotes Icon">
+        </div>
+        <div class="topic">EarthQuake Reader</div>
+        <p class="description">Real-time earthquake alert app with a visual map.</p>
+        <div class="tech-icons">
+          <div class="tech" data-tech="CPP"><img src="icons/cpp-icon.png"></div>
+          <div class="tech" data-tech="API"><img src="icons/api-icon.png"></div>
+          <div class="tech" data-tech="Dart"><img src="icons/dart-icon.png"></div>
+        </div>
+        <a href="https://github.com/nigamman/earthQuakeReader" target="_blank" class="github-btn">View on GitHub</a>
+      </div>
+      <div class="box">
+        <div class="icon">
+          <img src="icons/local3-icon.png" alt="Leo Quotes Icon">
+        </div>
+        <div class="topic">Word Huddle Game</div>
+        <p class="description">A challenging word puzzle game with multiple difficulty levels and never ending game.</p>
+        <div class="tech-icons">
+          <div class="tech" data-tech="Android"><img src="icons/android-icon.png"></div>
+          <div class="tech" data-tech="C++"><img src="icons/cpp-icon.png"></div>
+          <div class="tech" data-tech="API"><img src="icons/api-icon.png"></div>
+        </div>
+        <a href="https://github.com/nigamman/wordHuddleGame" target="_blank" class="github-btn">View on GitHub</a>
+      </div>
+      <div class="box">
+        <div class="icon">
+          <img src="icons/local-icon.png" alt="Leo Quotes Icon">
+        </div>
+        <div class="topic">Virtual Card Holder</div>
+        <p class="description">This app provides a secure and convenient way to store and manage physical and digital business or visiting cards.</p>
+        <div class="tech-icons">
+          <div class="tech" data-tech="Android Studio"><img src="icons/andriodStudio-icon.png"></div>
+          <div class="tech" data-tech="Flutter"><img src="icons/flutter-icon.png"></div>
+          <div class="tech" data-tech="Dart"><img src="icons/dart-icon.png"></div>
+        </div>
+        <a href="https://github.com/nigamman/virtualCardHolder" target="_blank" class="github-btn">View on GitHub</a>
+      </div>
+      <div class="box">
+        <div class="icon">
+          <img src="icons/local2-icon.png" alt="Leo Quotes Icon">
+        </div>
+        <div class="topic">To-Do App</div>
+        <p class="description">A simple and intuitive task management app to organize daily activities with categorizations</p>
+        <div class="tech-icons">
+          <div class="tech" data-tech="C++"><img src="icons/cpp-icon.png"></div>
+          <div class="tech" data-tech="Dart"><img src="icons/dart-icon.png"></div>
+          <div class="tech" data-tech="Android"><img src="icons/android-icon.png"></div>
+        </div>
+        <a href="https://github.com/nigamman/toDo-App" target="_blank" class="github-btn">View on GitHub</a>
     </div>
-  </section>
+    </div> 
+  </div> 
+</section>
 
   <!-- Contact Me section Start -->
   <section class="contact" id="contact">
@@ -189,20 +247,23 @@
       <div class="title"><span>Contact Me</span></div>
       <div class="text">
         <div class="topic">Have Any Project?</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam neque ipsum corrupti dolores, facere numquam
-          voluptate aspernatur sit perferendis qui nisi modi! Recusandae deserunt consequatur voluptatibus alias
-          repellendus nobis eligendi.</p>
+        <p>Looking for a passionate developer to bring your vision to life? Whether it’s a website, an app, or a 
+          unique digital experience, I’m here to help. Let’s discuss your project—just press 'Let’s Chat' and get in
+          touch!
+        </p>
         <div class="button">
-          <button>Let's Chat</button>
+          <a href="mailto:nigamman20@gmail.com?subject=Let's%20Discuss%20a%20Project!">
+            <button>Let's Chat</button>
+          </a>
         </div>
       </div>
     </div>
-  </section>
+</section>
 
   <!-- Footer Section Start -->
   <footer>
     <div class="text">
-      <span>Created By <a href="#">CodingLab</a> | &#169; 2021 All Rights Reserved</span>
+      <span>Created By <a href="#">nigamman</a> | &#169; 2021 All Rights Reserved</span>
     </div>
   </footer>
 
