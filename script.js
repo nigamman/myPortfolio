@@ -54,7 +54,7 @@ const animatedSurname = "Nigam"; // Only this retypes after first loop
 const posts = ["Android Developer", "Software Developer"];
 let postIndex = 0, charIndex = 0;
 const typingSpeed = 100; // Speed in milliseconds per letter
-const switchSpeed = 2000; // Speed before switching text
+const switchSpeed = 100; // Speed before switching text
 
 function typeName() {
     typedNameElement.innerHTML = staticNamePart;
