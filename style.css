@@ -80,7 +80,7 @@ nav .navbar .menu li {
 }
 
 .navbar .menu a:hover {
-  color: #4070f4;
+  color: #085dd4;
 }
 
 nav.sticky .menu a {
@@ -92,9 +92,38 @@ nav.sticky .menu a:hover {
 }
 
 .navbar .media-icons a {
-  color: #4070f4;
+  color: #000; /* Change icon color to black */
   font-size: 18px;
   margin: 0 6px;
+  position: relative; /* Required for absolute positioning of the text */
+  display: inline-block; /* Allows to position the name properly */
+  transition: transform 0.3s ease; /* Smooth animation for scaling */
+}
+
+.navbar .media-icons a .icon-name {
+  display: none; /* Hide the name by default */
+  position: absolute;
+  top: 30px; /* Position the name below the icon */
+  left: 50%;
+  transform: translateX(-50%); /* Center the name */
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease, top 0.3s ease;
+  white-space: nowrap; /* Prevent name from breaking to the next line */
+}
+
+.navbar .media-icons a:hover {
+  transform: scale(1.2); /* Enlarge the icon slightly */
+}
+
+.navbar .media-icons a:hover .icon-name {
+  display: block;
+  opacity: 1; /* Fade in the name */
+  top: 40px; /* Move the name below the icon */
 }
 
 nav.sticky .media-icons a {
@@ -130,67 +159,63 @@ nav.sticky .menu-btn {
 .home {
   height: 100vh;
   width: 100%;
-  
+  background: linear-gradient(to right, #67b8e8, #8daaf8);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   font-family: 'Ubuntu', sans-serif;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .home .home-content {
-  width: 90%;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-width: 90%;
 }
 
 .home .text-one {
   font-size: 25px;
-  color: #0E2431;
+  color: #fff;
 }
 
 .home .text-two {
-  color: #0E2431;
+  color: #fff;
   font-size: 75px;
   font-weight: 600;
-  margin-left: -3px;
 }
 
 .home .text-three {
   font-size: 40px;
   margin: 5px 0;
-  color: #4070f4;
+  color: #ffcc00;
+  min-height: 50px;
 }
 
 .home .text-four {
   font-size: 23px;
   margin: 5px 0;
-  color: #0E2431;
-}
-
-.home .button {
-  margin: 14px 0;
+  color: #fff;
 }
 
 .home .button button {
   outline: none;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 6px;
   font-size: 25px;
-  font-weight: 400;
-  background: #4070f4;
-  color: #fff;
+  font-weight: 500;
+  background: #0073ff;
+  color: #0E2431;
   cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.4s ease;
 }
 
 .home .button button:hover {
-  border-color: #4070f4;
-  background-color: #fff;
-  color: #4070f4;
+  border-color: #0073ff;
+  background-color: transparent;
+  color: #0073ff;
 }
 
 /* About Section Styling */
