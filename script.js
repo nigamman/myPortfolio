@@ -44,76 +44,65 @@ let navLinks = document.querySelectorAll(".menu li a");
 navLinks.forEach((link) => {
   link.addEventListener("click", hideNavMenu);
 });
+
 const typedNameElement = document.getElementById("typed-name");
 const typedPostElement = document.getElementById("typed-post");
 
 const staticNamePart = "I'm Shivansh "; // Part that remains
 const animatedSurname = "Nigam"; // Only this retypes after first loop
 
-const staticPostPart = "Android "; // Part that remains
-const animatedPost = "Developer"; // Only this retypes after first loop
-
-let surnameIndex = 0, postIndex = 0;
+const posts = ["Android Developer", "Software Developer"];
+let postIndex = 0, charIndex = 0;
 const typingSpeed = 100; // Speed in milliseconds per letter
-let firstCycle = true; // Tracks first loop
+const switchSpeed = 2000; // Speed before switching text
 
-// Function to type full name initially, then only surname
 function typeName() {
-  if (firstCycle) {
-    typedNameElement.innerHTML = staticNamePart; // Display first part
-    typeSurname(); // Start typing surname
-  } else {
-    typedNameElement.innerHTML = staticNamePart; // Keep first part static
-    typeSurname(); // Start retyping surname
-  }
+    typedNameElement.innerHTML = staticNamePart;
+    typeSurname();
 }
 
-// Function to type the surname (with effect)
 function typeSurname() {
-  if (surnameIndex < animatedSurname.length) {
-    typedNameElement.innerHTML += animatedSurname.charAt(surnameIndex);
-    surnameIndex++;
-    setTimeout(typeSurname, typingSpeed);
-  } else {
-    setTimeout(typePost, 500); // Wait before typing post
-  }
+    if (charIndex < animatedSurname.length) {
+        typedNameElement.innerHTML += animatedSurname.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeSurname, typingSpeed);
+    } else {
+        setTimeout(typePost, 500); // Wait before typing post
+    }
 }
 
-// Function to type full post initially, then only "Developer"
 function typePost() {
-  if (firstCycle) {
-    typedPostElement.innerHTML = staticPostPart; // Display first part
-    typeAnimatedPost(); // Start typing the rest
-  } else {
-    typedPostElement.innerHTML = staticPostPart; // Keep first part static
-    typeAnimatedPost(); // Retype only "Developer"
-  }
+    let currentPost = posts[postIndex];
+    typedPostElement.innerHTML = "";
+    charIndex = 0;
+    function typeText() {
+        if (charIndex < currentPost.length) {
+            typedPostElement.innerHTML += currentPost.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeText, typingSpeed);
+        } else {
+            setTimeout(() => {
+                postIndex = (postIndex + 1) % posts.length;
+                erasePost();
+            }, switchSpeed);
+        }
+    }
+    typeText();
 }
 
-// Function to type "Developer" (with effect)
-function typeAnimatedPost() {
-  if (postIndex < animatedPost.length) {
-    typedPostElement.innerHTML += animatedPost.charAt(postIndex);
-    postIndex++;
-    setTimeout(typeAnimatedPost, typingSpeed);
-  } else {
-    setTimeout(resetTyping, 2000); // Wait before resetting
-  }
+function erasePost() {
+    let currentText = typedPostElement.innerHTML;
+    if (currentText.length > 0) {
+        typedPostElement.innerHTML = currentText.substring(0, currentText.length - 1);
+        setTimeout(erasePost, 50);
+    } else {
+        setTimeout(typePost, 500);
+    }
 }
 
-// Function to reset typing effect and loop it infinitely
-function resetTyping() {
-  surnameIndex = 0;
-  postIndex = 0;
-  firstCycle = false; // After first loop, only surname and "Developer" retype
-  setTimeout(typeName, 500); // Restart typing after a short delay
-}
-
-// Start typing effect on page load
 window.onload = () => {
-  setTimeout(typeName, 500);
+    setTimeout(typeName, 500);
 };
-
 document.addEventListener('DOMContentLoaded', function() {
   // Load VanillaTilt dynamically
   const tiltScript = document.createElement('script');
