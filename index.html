@@ -91,10 +91,21 @@
             ideas, and build something amazing together!
           </p>
           <div class="button">
-            <a href="document/myResume_nigamman.pdf" download>
-              <button>Download Resume</button>
-            </a>  <!-- ✅ Fixed: Properly closed the <a> tag -->
+            <button onclick="askPassword()">Download Resume</button>
           </div>
+
+    <script>
+      const correctPassword = "shivansh123";
+
+      function askPassword() {
+        const userInput = prompt("Enter password to download resume:");
+        if (userInput === correctPassword) {
+          window.open("https://drive.google.com/file/d/1b59BMk5Jy4xcJtFMhLgRdYH95OHB9hW5/view?usp=sharing", "_blank");
+        } else {
+          alert("Incorrect password. Access denied.");
+        }
+      }
+    </script>
         </div>
       </div>
     </div>
@@ -121,7 +132,7 @@
         </div>
       </div>
       <div class="skill-card">
-        <img src="icons/cpp-icon.png" alt="CPP">
+        <img src="icons/cpp-icon.png" alt="C++">
         <h3>C/C++</h3>
         <div class="progress-bar">
           <div class="progress" data-progress="80%"></div>
